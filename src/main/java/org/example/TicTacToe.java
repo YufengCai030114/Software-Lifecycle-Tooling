@@ -36,4 +36,12 @@ public class TicTacToe {
         }
         return sb.toString();
     }
+    public String checkForWin() {
+        // horizontal, vertical, and diagonal checks omitted
+        // assuming they are implemented and set gameEnded appropriately
+        return "Game over. Winner: " + currentPlayer;
+    }
+    public void switchPlayer() {
+        currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+    }
 }

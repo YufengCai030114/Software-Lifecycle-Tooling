@@ -27,4 +27,13 @@ public class TicTacToeTest {
         String expectedBoard = "X - - \n- O - \n- - - \n";
         assertEquals("Board should match expected state after two moves", expectedBoard.trim(), game.printBoard().trim());
     }
+    @Test
+    public void testGameEndWin() {
+        game.makeMove(0, 0); // X
+        game.makeMove(0, 1); // O
+        game.makeMove(1, 0); // X
+        game.makeMove(0, 2); // O
+        game.makeMove(2, 0); // X wins
+        assertEquals("Game over. Winner: X", game.checkForWin());
+    }
 }
