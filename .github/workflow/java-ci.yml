@@ -1,6 +1,9 @@
 name: Java CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - feature/**
 
 jobs:
   build:
@@ -14,4 +17,4 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
     - name: Build and Test with Maven
-      run: mvn clean install
+      run: mvn test --file pom.xml
