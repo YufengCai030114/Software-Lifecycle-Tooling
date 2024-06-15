@@ -20,4 +20,11 @@ public class TicTacToeTest {
         assertEquals("X", game.printBoard().trim().charAt(0));
         assertFalse("Player should not be able to place X at (0, 0) again", game.makeMove(0, 0));
     }
+    @Test
+    public void testCurrentGameState() {
+        game.makeMove(0, 0); // X
+        game.makeMove(1, 1); // O
+        String expectedBoard = "X - - \n- O - \n- - - \n";
+        assertEquals("Board should match expected state after two moves", expectedBoard.trim(), game.printBoard().trim());
+    }
 }
